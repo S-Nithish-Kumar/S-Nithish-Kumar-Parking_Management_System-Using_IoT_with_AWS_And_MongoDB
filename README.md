@@ -1,5 +1,3 @@
-# Parking Management System Using IoT with AWS and MongoDB
-
 <h2 align="center">Demonstration video</h2>
 <p align="center">
 <a href="https://youtu.be/Ha5XNsRvKi0"><img src="images\multiple_space_allocation_video_thumbnail.png" height="70%" width="70%"></a>
