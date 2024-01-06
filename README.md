@@ -5,22 +5,22 @@
 
 ## Contents:
 1. [Problem Statement](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#1-problem-statement)
-2. [Objectives](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#2-what-i-am-trying-to-solve)
-3. [Pose Estimation Model](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#3-system-components)
-4. [Process Flow](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#4-interaction-between-components)
-5. [Data Collection](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#5-tradeoffs-in-the-design)
-6. [Data Visualization and Preprocessing](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#6-tech-stacks)
-7. [Model Training and Results](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#7-process-flow)
-8. [Output](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#8-license-plate-recognition)
-9. [Problems and Troubleshooting](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#9-hosting-node-server-in-aws)
-10. [Conclusion](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#10-database)
-11. [References](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#11-user-interface)
+2. [What I am Trying to Solve](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#2-what-i-am-trying-to-solve)
+3. [System Components](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#3-system-components)
+4. [Interaction between Components](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#4-interaction-between-components)
+5. [Tradeoffs in the Design](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#5-tradeoffs-in-the-design)
+6. [Tech Stacks](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#6-tech-stacks)
+7. [Process Flow](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#7-process-flow)
+8. [License Plate Recognition](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#8-license-plate-recognition)
+9. [Hosting Node Sever in AWS](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#9-hosting-node-server-in-AWS)
+10. [Database](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#10-database)
+11. [User Interface](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#11-user-interface)
 12. [References](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#12-references)
 
 ### 1. Problem Statement
 Urban parking is often inconvenient, congested, and inefficient. Users struggle to find parking spaces, make payments, and have a smooth experience. Manual ticketing and payment systems are slow and error-prone, lacking technological efficiency.
 
-### 2. What I am Trying to Solve:
+### 2. What I am Trying to Solve
 + **License Plate Recognition:** Eliminate the need for physical tickets and enhance security.
 - **Parking Space Allocation:** Intelligently allocating available parking spaces to vehicles, ensuring efficient space utilization.
 + **Hands-Free Payment** (Future scope): Automatically charges users based on their parking duration.
