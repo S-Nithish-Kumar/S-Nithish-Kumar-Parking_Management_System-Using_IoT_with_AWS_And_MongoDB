@@ -3,15 +3,29 @@
 <a href="https://youtu.be/Ha5XNsRvKi0"><img src="images\multiple_space_allocation_video_thumbnail.png" height="70%" width="70%"></a>
 </p>
 
-## Problem Statement
+## Contents:
+1. [Problem Statement](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#1-problem-statement)
+2. [Objectives](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#2-what-i-am-trying-to-solve)
+3. [Pose Estimation Model](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#3-system-components)
+4. [Process Flow](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#4-interaction-between-components)
+5. [Data Collection](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#5-tradeoffs-in-the-design)
+6. [Data Visualization and Preprocessing](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#6-tech-stacks)
+7. [Model Training and Results](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#7-process-flow)
+8. [Output](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#8-license-plate-recognition)
+9. [Problems and Troubleshooting](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#9-hosting-node-server-in-aws)
+10. [Conclusion](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#10-database)
+11. [References](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#11-user-interface)
+12. [References](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#12-references)
+
+### 1. Problem Statement
 Urban parking is often inconvenient, congested, and inefficient. Users struggle to find parking spaces, make payments, and have a smooth experience. Manual ticketing and payment systems are slow and error-prone, lacking technological efficiency.
 
-## What I am Trying to Solve:
+### 2. What I am Trying to Solve:
 + **License Plate Recognition:** Eliminate the need for physical tickets and enhance security.
 - **Parking Space Allocation:** Intelligently allocating available parking spaces to vehicles, ensuring efficient space utilization.
 + **Hands-Free Payment** (Future scope): Automatically charges users based on their parking duration.
 
-## System Components
+### 3. System Components
 + **License Plate Recognition (LPR) System:** Identifying and recognizing the alphanumeric characters on the plates.
 - **Camera System:**  To capture images of vehicles and their license plates as they enter the parking area.
 + **Database:** Stores information about registered users, their license plate data, parking space assignments, and payment details.
@@ -20,18 +34,18 @@ Urban parking is often inconvenient, congested, and inefficient. Users struggle 
 - **Parking Space Management:** Optimizes parking space allocation.
 + **Central Processing Unit:** Processes the data received from cameras, manages the recognition of license plates, allocates parking spaces.
 
-## Interaction between Components
+### 4. Interaction between Components
 <p align="center">
 <img src="images\interaction_between_components.png" height="80%" width="80%">
 </p>
 <p align="center">Figure 1 Flow diagram of interaction between components</p>
 
-## Tradeoffs in the Design
+### 5. Tradeoffs in the Design
 + This project only focuses on Entry and Exit management System. Only one camera setup will be used for both the systems.
 - Parking Space Management algorithms allocates random space based on the free space data in database. In future, either sensors will be used or Computer vision algorithms will be used to detect free space.
 + Presence of card credentials of the user are only checked and payment APIs are not used for transaction.
 
-## Tech Stacks
+### 6. Tech Stacks
 + Web application: **HTML, CSS, JavaScript, EJS**
 - Database Management System: **MongoDB Atlas**
 + Server side script: **Node.js**
@@ -40,13 +54,13 @@ Urban parking is often inconvenient, congested, and inefficient. Users struggle 
 - Cloud Service: **AWS**
 * LPR Deployment: **Raspberry Pi 4**
 
-## Process Flow
+### 7. Process Flow
 <p align="center">
 <img src="images\Flowchart.jpeg" height="90%" width="90%">
 </p>
 <p align="center">Figure 2 Process Flow Diagram</p>
 
-## License Plate Recognition
+### 8. License Plate Recognition
 * Number Plate Detection – **Haar cascade classifier**
 + Number Plate Recognition - **EasyOCR**
 
@@ -60,13 +74,13 @@ Urban parking is often inconvenient, congested, and inefficient. Users struggle 
 </p>
 <p align="center">Figure 4 Number Plate Detection and Recognition</p>
 
-## Hosting Node Sever in AWS
+### 9. Hosting Node Sever in AWS
 <p align="center">
 <img src="images\node_served_on_AWS.PNG" height="90%" width="90%">
 </p>
 <p align="center">Figure 5 Node Sever hosted on AWS</p>
 
-## Database
+### 10. Database
 + Database - **MongoDB Atlas**
 - Database Name – **VehicleDB**
 + Collections – **users, vehicleStatus**
@@ -83,7 +97,7 @@ Urban parking is often inconvenient, congested, and inefficient. Users struggle 
 </p>
 <p align="center">Figure 7 users collection – updated after users sign up</p>
 
-## User Interface
+### 11. User Interface
 <p align="center">
 <img src="images\home_page_after_plate_recognition_and_allocation.PNG" height="90%" width="90%">
 </p>
@@ -94,7 +108,7 @@ Urban parking is often inconvenient, congested, and inefficient. Users struggle 
 </p>
 <p align="center">Figure 9 Display Payment Information When the Vehicle Exits Parking Lot</p>
 
-## References
+### 12. References
 - https://ejs.co/
 - https://www.mongodb.com/languages/python
 - https://www.mongodb.com/docs/drivers/node/current/quick-start/connect-to-mongodb/
