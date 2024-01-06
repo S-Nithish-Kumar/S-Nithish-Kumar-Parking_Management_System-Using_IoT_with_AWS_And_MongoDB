@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <title>Allotment Page</title>
+    <script>
+        // console.log(JSON.stringify(query));
+        startup = () => {
+            // console.log("Inside startup")
+            let xhr = new XMLHttpRequest();
+            setInterval(() => {
+                xhr.open("GET", 'http://localhost:5000/getData', true);
+                xhr.send();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                        data = JSON.parse(xhr.responseText);
+
+                        const allottedSpace = [];
+                        const allottedVehicle = [];
+                        var space_vehicle_dict = {};
+                        for (let i = 0; i < data.length; i++) {
+                            allottedSpace.push(data[i]["parkingSpaceNumber"])
+                            allottedVehicle.push(data[i]["userId"])
+                            space_vehicle_dict[allottedSpace[i]] = allottedVehicle[i]
+                        }
+                        // console.log(space_vehicle_dict)
+                        for (let i = 1; i < 11; i++) {
+                            if (allottedSpace.includes(i)) {
+                                const spaceElement = document.getElementById("space-" + i);
+                                spaceElement.style.backgroundColor = "rgb(200, 30, 30)";
+                                document.getElementById("vehicle-" + i).innerHTML = space_vehicle_dict[i];
+                            }
+                            else {
+                                const spaceElement = document.getElementById("space-" + i);
+                                spaceElement.style.backgroundColor = "rgb(150, 150, 150)";
+                                document.getElementById("vehicle-" + i).innerHTML = "";
+                            }
+                        }
+                        // console.log("Alloted space: ",allottedSpace);
+                        // console.log("Alloted vehicle: ",allottedVehicle);
+                    }
+                };
+
+                {
+                //console.log(userId)
+                let xhr2 = new XMLHttpRequest();
+                const user_Id = document.getElementById("user").innerHTML
+                //console.log(user_Id.trim())
+                xhr2.open("GET", "http://localhost:5000/getTotalAmount?userId="+user_Id.trim(), true);
+                xhr2.send();
+                xhr2.onreadystatechange = function () {
+                    if (xhr2.readyState === XMLHttpRequest.DONE && xhr2.status === 200) {
+                        data = JSON.parse(xhr2.responseText);
+                        if (data[0]["status"] == 3){
+                            document.getElementById("amountpayable").innerHTML = "Total payable amount: $" + data[0]["totalAmount"]
+                        }
+                        else {
+                            document.getElementById("amountpayable").innerHTML = " ";   
+                        }
+                    }
+                }
+                };
+
+
+                {
+                //console.log(userId)
+                let xhr4 = new XMLHttpRequest();
+                const user_Id = document.getElementById("user").innerHTML
+                //console.log(user_Id.trim())
+                xhr4.open("GET", "http://localhost:5000/getUserSpace?userId="+user_Id.trim(), true);
+                xhr4.send();
+                xhr4.onreadystatechange = function () {
+                    if (xhr4.readyState === XMLHttpRequest.DONE && xhr4.status === 200) {
+                        data = JSON.parse(xhr4.responseText);
+                        if (data[0]["status"] == 2){
+                            document.getElementById("userspace").innerHTML = "You are allotted parking space number " + data[0]["parkingSpaceNumber"]
+                        }
+                        else{
+                            document.getElementById("userspace").innerHTML = " ";
+                        }
+                        //console.log(data[0]["userName"]);
+                        //console.log("Hello");
+                    }
+                }
+                };
+
+            }, 5000)
+        }
+
+        setTimeout(()=>{
+                //console.log(userId)
+                let xhr3 = new XMLHttpRequest();
+                const user_Id = document.getElementById("user").innerHTML
+                //console.log(user_Id.trim())
+                xhr3.open("GET", "http://localhost:5000/getUserName?userId="+user_Id.trim(), true);
+                xhr3.send();
+                xhr3.onreadystatechange = function () {
+                    if (xhr3.readyState === XMLHttpRequest.DONE && xhr3.status === 200) {
+                        data = JSON.parse(xhr3.responseText);
+                        document.getElementById("username").innerHTML = "Welcome! " + data[0]["userName"]
+                        //console.log(data[0]["userName"]);
+                        //console.log("Hello");
+                    }
+                };
+        },200)
+    </script>
+</head>
+
+<body onload="startup()">
+    <div class="container">
+        <div class="flex-container-heading">
+            <h1>Automated Parking System App</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div id="user" hidden>
+                    <%=query%>
+                </div>
+                <div id="username" style="text-align: center; padding-bottom: 5px;"></div>
+                <div id="userspace" style="text-align: center; padding-bottom: 5px;"></div>
+                <div id="amountpayable" style="text-align: center; padding-bottom: 15px;"></div>
+                <div class="parking-entry-exit-flex">
+                    <div class="parking-entry-exit"
+                        style="border-top-right-radius: 3px; border-top-left-radius: 3px; border-bottom: 0px;">
+                        <p style="text-align: center; font-size: 18px;">Exit</p>
+                    </div>
+                </div>
+                <div class="parking-lot-flex">
+                    <div class="parking-lot" style="border-radius:3px;">
+                        <div class="col-sm-4">
+                            <div id="space-1" class="parking-space" style="margin-top: 30px;">
+                                <p style="margin: 3px; font-size: 14px;">1</p>
+                                <p id="vehicle-1" style="margin: 3px; font-size: 14px;"></p>
+                            </div>
+                            <div id="space-2" class="parking-space">
+                                <p style="margin: 3px; font-size: 14px;">2</p>
+                                <p id="vehicle-2" style="margin: 3px; font-size: 14px;"></p>
+                            </div>
+                            <div id="space-3" class="parking-space">
+                                <p style="margin: 3px; font-size: 14px;">3</p>
+                                <p id="vehicle-3" style="margin: 3px; font-size: 14px;"></p>
+                            </div>
+                            <div id="space-4" class="parking-space">
+                                <p style="margin: 3px; font-size: 14px;">4</p>
+                                <p id="vehicle-4" style="margin: 3px; font-size: 14px;"></p>
+                            </div>
+                            <div id="space-5" class="parking-space">
+                                <p style="margin: 3px; font-size: 14px;">5</p>
+                                <p id="vehicle-5" style="margin: 3px; font-size: 14px;"></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <h2>Lot 34</h2>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="space-10" class="parking-space" style="margin-top: 30px;">
+                                <p style="margin: 3px; font-size: 14px;">10</p>
+                                <p id="vehicle-10" style="margin: 3px; font-size: 14px;"></p>
+                            </div>
+                            <div id="space-9" class="parking-space">
+                                <p style="margin: 3px; font-size: 14px;">9</p>
+                                <p id="vehicle-9" style="margin: 3px; font-size: 14px;"></p>
+                            </div>
+                            <div id="space-8" class="parking-space">
+                                <p style="margin: 3px; font-size: 14px;">8</p>
+                                <p id="vehicle-8" style="margin: 3px; font-size: 14px;"></p>
+                            </div>
+                            <div id="space-7" class="parking-space">
+                                <p style="margin: 3px; font-size: 14px;">7</p>
+                                <p id="vehicle-7" style="margin: 3px; font-size: 14px;"></p>
+                            </div>
+                            <div id="space-6" class="parking-space">
+                                <p style="margin: 3px; font-size: 14px;">6</p>
+                                <p id="vehicle-6" style="margin: 3px; font-size: 14px;"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="parking-entry-exit-flex">
+                    <div class="parking-entry-exit"
+                        style="border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top: 0px;">
+                        <p style="text-align: center; font-size: 18px;">Entry</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+
+
+</body>

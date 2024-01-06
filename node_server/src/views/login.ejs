@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Welcome!</h1>
+        <h1>Automated Parking System App</h1>
+        <h2>Login</h2>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="userId">User Id:</label>
+                <input type="text" id="userId" name="userId" placeholder="Vehicle number with no space" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password" required autocomplete="off">
+            </div>
+            <div class="form-button">
+                <button type="submit" class="submit-btn">Login</button>
+                <button type="reset" class="submit-btn" value="Reset">Reset</button>
+            </div> 
+        </form>
+        <p>Don't have an account? <a href="/signup">Signup</a></p>
+    </div>
+</body>
