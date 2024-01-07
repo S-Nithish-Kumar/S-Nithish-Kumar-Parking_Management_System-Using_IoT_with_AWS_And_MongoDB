@@ -12,7 +12,7 @@
 6. [Tech Stacks](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#6-tech-stacks)
 7. [Process Flow](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#7-process-flow)
 8. [License Plate Recognition](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#8-license-plate-recognition)
-9. [Hosting Node Sever in AWS](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#9-hosting-node-server-in-AWS)
+9. [Hosting Node Sever in AWS](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#9-hosting-node-server-in-aws)
 10. [Database](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#10-database)
 11. [User Interface](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#11-user-interface)
 12. [References](https://s-nithish-kumar.github.io/S-Nithish-Kumar-Parking_Management_System-Using_IoT_with_AWS_And_MongoDB/#12-references)
@@ -74,7 +74,7 @@ Urban parking is often inconvenient, congested, and inefficient. Users struggle 
 </p>
 <p align="center">Figure 4 Number Plate Detection and Recognition</p>
 
-### 9. Hosting Node Sever in AWS
+### 9. Hosting Node Server in AWS
 <p align="center">
 <img src="images\node_served_on_AWS.PNG" height="90%" width="90%">
 </p>
